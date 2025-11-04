@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [App, Order],
@@ -25,7 +26,7 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule,
   ],
-  providers: [provideBrowserGlobalErrorListeners()],
+  providers: [provideBrowserGlobalErrorListeners(), provideHttpClient()],
   bootstrap: [App],
 })
 export class AppModule {}
