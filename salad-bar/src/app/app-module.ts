@@ -1,0 +1,31 @@
+import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing-module';
+import { App } from './app';
+import { SaladModule } from './salad/salad-module';
+import { Order } from './order/order';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
+@NgModule({
+  declarations: [App, Order],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SaladModule, // eager de façon global
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+  ],
+  providers: [provideBrowserGlobalErrorListeners()],
+  bootstrap: [App],
+})
+export class AppModule {}

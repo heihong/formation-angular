@@ -1,0 +1,43 @@
+<form [formGroup]="orderForm" (ngSubmit)="startOrder()" class="orderForm">
+
+    <mat-form-field>
+        <mat-label>what is the name ?</mat-label>
+        <input type="text" formControlName="name" matInput>
+        <mat-error>Please tell me your name</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>what is the tel ?</mat-label>
+        <input type="text" formControlName="tel" matInput>
+        @if(telControl.hasError('required')){
+             <mat-error>Please give me your name</mat-error>
+        }
+        @else if(telControl.hasError('pattern')){
+             <mat-error>that is not a real number</mat-error>
+        }
+       
+    </mat-form-field>
+
+
+    <button type="button" matButton="outlined" (click)="addDeliveryAdress()">Take away ? </button>
+    @if(takeAwayControl.value){
+        <form [formGroup]="devliveryAdressForm" class="devliveryAdressForm">
+                <mat-form-field>
+                    <mat-label>what is the street ?</mat-label>
+                    <input type="text" formControlName="street" matInput>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>what is the code postal ?</mat-label>
+                    <input type="text" formControlName="cp" matInput>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>what is the city ?</mat-label>
+                    <input type="text" formControlName="city" matInput>
+                </mat-form-field>
+        </form>
+        
+    }
+   
+    <button  matButton="filled" type="submit">start order</button>
+
+</form>

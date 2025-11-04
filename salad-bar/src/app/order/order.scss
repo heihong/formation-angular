@@ -1,0 +1,27 @@
+:host { // pour eviter de mettre une div au debut
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.orderForm {
+ display: flex;
+ flex-direction: column;
+ width: 400px;
+ padding: 16px;
+ border: 1px solid grey;
+ border-radius: 15px;
+}
+
+.devliveryAdressForm {
+ display: flex;
+ padding: 10px;
+ flex-direction: column;
+ border-top: 1px solid grey;
+ border-bottom: 1px solid grey;
+ 
+}
+
+button{
+    margin: 10px;
+}
