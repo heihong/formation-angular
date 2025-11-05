@@ -1,13 +1,13 @@
 <h2>{{title()}}</h2>
 <div class="card-toopings">
     <ul>
-    @for(topping of toppings(); track topping.id){
+    @for(topping of toppings(); track index; let index = $index){
             <li>
                 <div  class="tooping">
                     <span>
                         {{ topping.name }} {{ topping.price | currency:'€' }}
                     </span>
-                    <button  matButton="filled" type="button" (click)="onSelectTopping(topping)">{{actionButton()}}</button>
+                    <button  matButton="filled" type="button" (click)="onSelectTopping(topping, index)">{{actionButton()}}</button>
                 </div>
             </li>
         }

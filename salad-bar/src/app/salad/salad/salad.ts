@@ -22,8 +22,8 @@ export class Salad {
    this.toppings.chooseTopping(topping)
   }
 
-  onRemoveTopping(topping:Topping){
-    this.toppings.removeTopping(topping.id)
+  onRemoveTopping(index:number){
+    this.toppings.removeTopping(index)
   }
 
    total = computed<number>(()=>{

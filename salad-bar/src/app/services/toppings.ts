@@ -11,7 +11,7 @@ export class Toppings {
 
   constructor() {
     effect(() => { 
-        console.log('this.chosenToppings()',this.chosenToppings())
+        console.trace('this.chosenToppings()',this.chosenToppings())
     })
    }
 
@@ -29,8 +29,8 @@ export class Toppings {
     this.chosenToppingsList.update(toppings => [...toppings, topping]);
   }
 
-  removeTopping(id: number) {
-    this.chosenToppingsList.update(toppings => toppings.filter(topping => topping.id !== id));
+  removeTopping(index: number) {
+    this.chosenToppingsList.update(toppings => toppings.filter((topping, indexTopping)=> indexTopping !== index));
   }
 
 

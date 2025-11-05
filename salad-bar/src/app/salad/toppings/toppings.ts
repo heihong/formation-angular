@@ -13,11 +13,14 @@ export class Toppings {
   public actionButton = input('');
   public toppings = input<Topping[]>([]);
   public topping = output<Topping>();
+  public index = output<number>();
 
-  onSelectTopping(topping: Topping) {
+  onSelectTopping(topping: Topping, index:number) {
    this.topping.emit(topping)
+   this.index.emit(index)
   }
 
+  
  
 
  
