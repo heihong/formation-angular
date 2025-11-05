@@ -15,14 +15,15 @@ import { provideHttpClient } from '@angular/common/http';
 import { SharedMaterialModule } from './shared-material-module';
 
 @NgModule({
-  declarations: [App, Order],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    SaladModule, // eager de façon global
-    SharedMaterialModule
-  ],
-  providers: [provideBrowserGlobalErrorListeners(), provideHttpClient()],
-  bootstrap: [App],
+    declarations: [App],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        SaladModule, // eager de façon global
+        SharedMaterialModule,
+        Order
+    ],
+    providers: [provideBrowserGlobalErrorListeners(), provideHttpClient()],
+    bootstrap: [App],
 })
 export class AppModule {}

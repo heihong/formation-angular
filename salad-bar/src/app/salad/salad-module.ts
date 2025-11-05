@@ -8,15 +8,13 @@ import { Toppings } from './toppings/toppings';
 
 
 @NgModule({
-  declarations: [
-    Salad,
-    Toppings
-  ],
-  imports: [
-    CommonModule,
-    SaladRoutingModule,
-    AsyncPipe,
-    SharedMaterialModule
-  ]
+    imports: [
+        CommonModule,
+        SaladRoutingModule,
+        AsyncPipe,
+        SharedMaterialModule,
+        Salad,
+        Toppings
+    ]
 })
 export class SaladModule { }
