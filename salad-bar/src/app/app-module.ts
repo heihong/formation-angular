@@ -12,17 +12,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { provideHttpClient } from '@angular/common/http';
-import { SharedMaterialModule } from './shared-material-module';
+
 
 @NgModule({
     declarations: [App],
     imports: [
-        BrowserModule,
-        AppRoutingModule,
-        SaladModule, // eager de façon global
-        SharedMaterialModule,
-        Order
-    ],
+    BrowserModule,
+    AppRoutingModule,
+    SaladModule,
+    Order
+],
     providers: [provideBrowserGlobalErrorListeners(), provideHttpClient()],
     bootstrap: [App],
 })
