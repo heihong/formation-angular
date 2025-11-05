@@ -1,5 +1,5 @@
 <ul>
-   @for(topping of toppings; track topping.id){
+   @for(topping of toppings(); track topping.id){
         <li>{{topping.name}} ({{topping.price | currency:'€'}})</li>
     }
 </ul>

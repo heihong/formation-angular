@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { Topping } from '../../models/topping';
 
 @Component({
@@ -8,5 +8,6 @@ import { Topping } from '../../models/topping';
   styleUrl: './toppings.scss',
 })
 export class Toppings {
-  @Input() public toppings: Topping[] = []
+ // @Input() public toppings: Topping[] = []
+   public toppings = input<Topping[]>([]);
 }
