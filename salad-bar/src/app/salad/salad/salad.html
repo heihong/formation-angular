@@ -1,3 +1,4 @@
 <h2 class="mat-headline-medium">welcome {{order.name()}}</h2>
-
-<app-toppings [toppings]="toppingList()"></app-toppings>
+@if(toppings$ | async;  as toppings ){
+    <app-toppings [toppings]="toppings" (topping)="onSelectTopping($event)"></app-toppings>
+}

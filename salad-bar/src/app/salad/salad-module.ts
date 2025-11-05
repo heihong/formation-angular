@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { AsyncPipe, CommonModule } from '@angular/common';
 
 import { SaladRoutingModule } from './salad-routing-module';
 import { Salad } from './salad/salad';
 import { Toppings } from './toppings/toppings';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -13,7 +14,9 @@ import { Toppings } from './toppings/toppings';
   ],
   imports: [
     CommonModule,
-    SaladRoutingModule
+    SaladRoutingModule,
+    AsyncPipe,
+    MatButtonModule
   ]
 })
 export class SaladModule { }

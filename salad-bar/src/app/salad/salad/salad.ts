@@ -10,14 +10,13 @@ import { Topping } from '../../models/topping';
   templateUrl: './salad.html',
   styleUrl: './salad.scss',
 })
-export class Salad implements OnInit{
+export class Salad{
   public order = inject(Order)
   public toppings = inject(Toppings)
-  protected toppingList = signal<Topping[]>([])
 
-  ngOnInit(): void {
-    this.toppings.getToppings().subscribe(toppings => {
-      this.toppingList.set(toppings);
-    })
+  public toppings$ = this.toppings.getToppings();
+
+  onSelectTopping(topping: Topping) {
+   this.toppings.chooseTopping(topping)
   }
 }
