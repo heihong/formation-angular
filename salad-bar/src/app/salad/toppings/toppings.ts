@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Topping } from '../../models/topping';
 
 @Component({
   selector: 'app-toppings',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './toppings.scss',
 })
 export class Toppings {
-
+  @Input() public toppings: Topping[] = []
 }

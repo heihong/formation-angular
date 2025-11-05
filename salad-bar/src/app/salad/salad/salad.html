@@ -1,7 +1,3 @@
 <h2 class="mat-headline-medium">welcome {{order.name}}</h2>
 
-<ul>
-   @for(topping of toppingList(); track topping.id){
-        <li>{{topping.name}} ({{topping.price | currency:'€'}})</li>
-    }
-</ul>
+<app-toppings [toppings]="toppingList()"></app-toppings>
