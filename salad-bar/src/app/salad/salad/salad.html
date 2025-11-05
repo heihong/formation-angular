@@ -1,4 +1,11 @@
 <h2 class="mat-headline-medium">welcome {{order.name()}}</h2>
-@if(toppings$ | async;  as toppings ){
-    <app-toppings [toppings]="toppings" (topping)="onSelectTopping($event)"></app-toppings>
+@if(toppingsChoosen().length > 0){
+    <p>Total price: {{total()}}</p>
 }
+<div class="card-toopings">
+    @if(toppings$ | async;  as toppings ){
+        <app-toppings [toppings]="toppings" (topping)="onSelectTopping($event)" title="List of tooping" actionButton ="add"></app-toppings>
+    }
+
+    <app-toppings [toppings]="toppingsChoosen()" (topping)="onRemoveTopping($event)" title="List of choosend topping" actionButton ="remove"></app-toppings>
+</div>

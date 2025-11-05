@@ -1,22 +1,18 @@
-<ul>
-   @for(topping of toppings(); track topping.id){
-        <li>{{topping.name}} ({{topping.price | currency:'€'}})</li>
-        <button  matButton="filled" type="button" (click)="onSelectTopping(topping)">add</button>
-    }
-</ul>
-<div class="toopings">
-    <h2> The toppings choosend :</h2>
-
-    @for (topping of toppingsService.chosenToppings(); track topping.id) {
-    <!-- Example implementation -->
-        <div  class="tooping">
-            <span>
-                {{ topping.name }} {{ topping.price | currency:'€' }}
-            </span>
-            <button  matButton="filled" type="button" (click)="toppingsService.removeTopping(topping.id)">remove</button>
-        </div>
-    }
-    @empty {
-        <p>No ingredients available. Add some!</p>
-    }
+<h2>{{title()}}</h2>
+<div class="card-toopings">
+    <ul>
+    @for(topping of toppings(); track topping.id){
+            <li>
+                <div  class="tooping">
+                    <span>
+                        {{ topping.name }} {{ topping.price | currency:'€' }}
+                    </span>
+                    <button  matButton="filled" type="button" (click)="onSelectTopping(topping)">{{actionButton()}}</button>
+                </div>
+            </li>
+        }
+        @empty {
+            <p>No ingredients available. Add some!</p>
+        }
+    </ul>
 </div>

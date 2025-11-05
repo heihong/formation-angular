@@ -1,22 +1,19 @@
 :host {
-    display: flex;
+    margin-left: 10px;
 }
-
-ul {
+.card-toopings {
     margin: 0;
     padding: 10px;
     border: 1px solid grey;
 }
 
-.toopings {
-    margin-left: 10px;
+.tooping {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
-    border: 1px solid grey;
-   
-    .tooping {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-    }
+}
+
+button {
+    margin-left: 10px;
 }

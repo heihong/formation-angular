@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, signal } from '@angular/core';
+import { effect, inject, Injectable, signal } from '@angular/core';
 import { Topping } from '../models/topping';
 
 @Injectable({
@@ -8,6 +8,12 @@ import { Topping } from '../models/topping';
 export class Toppings {
   private http = inject(HttpClient);
   private readonly baseUrl = 'https://retoolapi.dev/XDaOzA/'
+
+  constructor() {
+    effect(() => { 
+        console.log('this.chosenToppings()',this.chosenToppings())
+    })
+   }
 
   getToppings() {
     return this.http.get<Topping[]>(`${this.baseUrl}/toppings`)
