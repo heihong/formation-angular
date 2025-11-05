@@ -55,8 +55,8 @@ export class Order {
  
   startOrder() {
    if(this.orderForm.valid){
-    this.order.name = this.orderForm.controls.name.value;
-    this.order.tel =  this.orderForm.value.tel ?? '';  // this.orderForm.value.tel || '' marche pas si this.orderForm.value.tel = 0
+   this.order.name.set(this.orderForm.controls.name.value)
+   this.order.tel.set(this.orderForm.controls.tel.value)
     this.router.navigate(['salad'])
    }
   }

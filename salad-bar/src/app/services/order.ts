@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Order {
-  public name:string = '';
-  public tel:string = '';
+  public name = signal('')
+  public tel = signal('')
   
 }

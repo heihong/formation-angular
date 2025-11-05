@@ -6,7 +6,7 @@ export const saladGuard: CanActivateFn = (route, state) => {
   const order = inject(Order);
   const router = inject(Router);
 
-  if(order.name && order.tel){
+  if(order.name() && order.tel()){
     return true
   }else {
     router.navigate(['/'])
