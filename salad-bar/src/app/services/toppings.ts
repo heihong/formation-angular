@@ -30,7 +30,7 @@ export class Toppings {
   }
 
   removeTopping(index: number) {
-    this.chosenToppingsList.update(toppings => toppings.filter((topping, indexTopping)=> indexTopping !== index));
+    this.chosenToppingsList.update(toppings => toppings.filter((_, indexTopping)=> indexTopping !== index));
   }
 
 
