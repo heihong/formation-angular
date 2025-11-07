@@ -6,6 +6,7 @@ import { Toppings as Toppings_1 } from '../toppings/toppings';
 import { AsyncPipe } from '@angular/common';
 
 
+
 @Component({
     selector: 'app-salad',
     templateUrl: './salad.html',

@@ -7,7 +7,7 @@ import { Topping } from '../models/topping';
 })
 export class Toppings {
   private http = inject(HttpClient);
-  private readonly baseUrl = 'https://retoolapi.dev/XDaOzA/'
+  private readonly baseUrl = 'https://retoolapi.dev/XDaOzA'
 
   constructor() {
     effect(() => { 
