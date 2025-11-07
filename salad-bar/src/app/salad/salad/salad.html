@@ -2,6 +2,7 @@
 @if(toppingsChoosen().length > 0){
     <p>Total price: {{total()}}</p>
 }
+<input type="text" placeholder="Search toppings..." (input)="onSearch($event.target.value)" />
 <div class="card-toopings">
     @if(toppings$ | async;  as toppings ){
         <app-toppings [toppings]="toppings" (topping)="onSelectTopping($event)"  title="List of tooping" actionButton ="add"></app-toppings>

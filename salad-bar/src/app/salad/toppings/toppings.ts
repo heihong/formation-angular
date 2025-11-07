@@ -2,6 +2,7 @@ import { Component, computed, input, OnChanges, OnInit, output, SimpleChanges } 
 import { Topping } from '../../models/topping';
 import { MatButton } from '@angular/material/button';
 import { CurrencyPipe } from '@angular/common';
+import { Subject } from 'rxjs';
 
 @Component({
     selector: 'app-toppings',
@@ -17,13 +18,10 @@ export class Toppings {
   public topping = output<Topping>();
   public index = output<number>();
 
+
   onSelectTopping(topping: Topping, index:number) {
    this.topping.emit(topping)
    this.index.emit(index)
   }
-
-  
- 
-
  
 }
